@@ -7,7 +7,6 @@ bases:
 
 resources:
   - gitops-manager.yaml
-  - vault-namespace.yaml
 
   
   
