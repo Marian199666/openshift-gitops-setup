@@ -3,7 +3,6 @@ kind: Kustomization
 
 bases:
   - ../../default/base
-
   
 patchesJson6902:
   - target:
@@ -13,9 +12,12 @@ patchesJson6902:
       group: argoproj.io
     path: argocd.yaml
   
-  # - target:
-      # kind: ClusterRoleBinding
-      # name: cluster-admin-gitops
-      # version: v1
-      # group: rbac.authorization.k8s.io
-    # path: clusterrolebinding.yaml
+  - target:
+      kind: ClusterRoleBinding
+      name: cluster-admin-gitops
+      version: v1
+      group: rbac.authorization.k8s.io
+    path: clusterrolebinding.yaml
+
+resources:
+  - vault-plugin-sa.yaml
