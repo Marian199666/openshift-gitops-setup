@@ -7,8 +7,14 @@ bases:
 patchesJson6902:
   - target:
       kind: Application
-      name: gitops-manager
+      name: argocd-manager
       version: v1alpha1
       group: argoproj.io
     path: patch-slack-subscription.yaml
   
+  - target:
+      kind: Application
+      name: argocd-manager
+      version: v1alpha1
+      group: argoproj.io
+    path: patch-vault-plugin.yaml

@@ -38,12 +38,14 @@
 
 `capabilities = ["read"] `
 
-`} EOF`
+`}`
+
+`EOF`
 
 ### Finally, let's create the authentication role
 
-Note that you will need to create the ServiceAccount (in this case, `vplugin` ) in the namespace (e.g. `openshift-gitops`) where the Argo CD instance is installed.
+Note that you will need to create the ServiceAccount (in this case, `vplugin` ) in the namespace (e.g. `argocd-01`) where the Argo CD instance is installed.
 
-`vault write auth/kubernetes/role/vplugin bound_service_account_names=vplugin bound_service_account_namespaces=openshift-gitops policies=vplugin ttl=24h`
+`vault write auth/kubernetes/role/vplugin bound_service_account_names=vplugin bound_service_account_namespaces=argocd-01 policies=vplugin ttl=24h`
 
 ### Now, we are all set!

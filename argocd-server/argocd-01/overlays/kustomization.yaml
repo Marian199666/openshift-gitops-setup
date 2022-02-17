@@ -1,23 +1,11 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-bases:
-  - ../../default/base
-  
-patchesJson6902:
-  - target:
-      kind: ArgoCD
-      name: openshift-gitops
-      version: v1alpha1
-      group: argoproj.io
-    path: argocd.yaml
-  
-  - target:
-      kind: ClusterRoleBinding
-      name: cluster-admin-gitops
-      version: v1
-      group: rbac.authorization.k8s.io
-    path: clusterrolebinding.yaml
+namespace: argocd-01
 
+bases:
+  - ../../../manifest/argocd/argocd-notifications/overlays
+  - ../base
+  
 resources:
-  - vault-plugin-sa.yaml
+  - notifications-secret.yaml

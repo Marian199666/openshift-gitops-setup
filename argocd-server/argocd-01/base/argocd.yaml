@@ -5,9 +5,9 @@
     namespace: argocd-01
 
 - op: replace
-  path: /spec
+  path: /spec/applicationInstanceLabelKey
   value:
-    applicationInstanceLabelKey: argocd.argoproj.io/argocd-01
+      argocd.argoproj.io/argocd-01
 
 - op: add
   path: /spec/repo

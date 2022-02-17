@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: gitops-config
   source:
-    path: managers/argocd-manager/base
+    path: managers/argocd-manager/overlays
     repoURL: https://github.com/StinkyBenji/openshift-gitops-setup
     targetRevision: master
   syncPolicy:

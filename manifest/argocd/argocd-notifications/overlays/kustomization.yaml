@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+bases:
+  - ../base
+
+resources:
+  - notification-cm.yaml
+  
+patchesStrategicMerge:
+  - service-cm.yaml
+  - subscription-cm.yaml
+  - template-cm.yaml
+  - trigger-cm.yaml
