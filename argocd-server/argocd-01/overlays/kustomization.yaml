@@ -13,9 +13,9 @@ patchesJson6902:
       group: argoproj.io
     path: argocd.yaml
   
-  - target:
-      kind: ClusterRoleBinding
-      name: cluster-admin-gitops
-      version: v1
-      group: rbac.authorization.k8s.io
-    path: clusterrolebinding.yaml
+  # - target:
+      # kind: ClusterRoleBinding
+      # name: cluster-admin-gitops
+      # version: v1
+      # group: rbac.authorization.k8s.io
+    # path: clusterrolebinding.yaml
