@@ -1,0 +1,17 @@
+- op: replace
+  path: /metadata
+  value:
+    name: cluster-admin-argocd-01
+    namespace: argocd-01
+
+- op: replace
+  path: /subjects
+  value:
+    kind: ServiceAccount
+    name: argocd-01-argocd-application-controller
+    namespace: argocd-01
+
+    
+
+
+

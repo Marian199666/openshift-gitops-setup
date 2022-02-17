@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vault-server
+spec:
+  ignoreDifferences:
+    - group: admissionregistration.k8s.io
+      kind: MutatingWebhookConfiguration
+      jsonPointers:
+        - /webhooks/0/clientConfig/caBundle
+  destination:
+    namespace: vault
+    server: "https://kubernetes.default.svc"
+  source:
+    path: ""
+    repoURL: "https://helm.releases.hashicorp.com"
+    targetRevision: 0.19.0
+    chart: vault
+    helm:
+      values: |-
+        global:
+          openshift: true
+        injector:
+          enabled: true
+          metrics:
+            enabled: false
+        server:
+          dev:
+            enabled: true
+        ui:
+          enabled: true
+  project: gitops-config
+  syncPolicy: 
+    automated:
+      self-Heal: true

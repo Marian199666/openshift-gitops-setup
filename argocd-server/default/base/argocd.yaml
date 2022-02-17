@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCD
+metadata:
+  name: openshift-gitops
+  namespace: openshift-gitops  
+spec:
+  applicationInstanceLabelKey: argocd.argoproj.io/openshift-gitops
+  dex:
+    openShiftOAuth: true
+  rbac:    
+    policy: g, argocdadmins, role:admin
+    scopes: '[groups]'      
+  server:
+    route:
+      enabled: true
+  

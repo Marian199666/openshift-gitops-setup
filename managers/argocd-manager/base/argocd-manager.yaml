@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-manager
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: argocd-01         
+    server: https://kubernetes.default.svc
+  project: gitops-config
+  source:
+    path: argocd-server/argocd-01/overlays
+    repoURL: https://github.com/StinkyBenji/openshift-gitops-setup
+    targetRevision: master
+  syncPolicy:
+    automated: {}
+
+  
+  

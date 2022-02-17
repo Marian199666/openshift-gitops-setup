@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitops-manager
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+  project: gitops-config
+  source:
+    path: managers/argocd-manager/base
+    repoURL: https://github.com/StinkyBenji/openshift-gitops-setup
+    targetRevision: master
+  syncPolicy:
+    automated: {}
