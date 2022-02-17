@@ -7,9 +7,9 @@
 - op: replace
   path: /subjects
   value:
-    kind: ServiceAccount
-    name: argocd-01-argocd-application-controller
-    namespace: argocd-01
+    - kind: ServiceAccount
+      name: argocd-01-argocd-application-controller
+      namespace: argocd-01
 
     
 

@@ -6,4 +6,5 @@ resources:
   - argocd.yaml
   - argocd-admingrp.yaml
   - clusterrolebinding.yaml
+  - vault-namespace.yaml
   
