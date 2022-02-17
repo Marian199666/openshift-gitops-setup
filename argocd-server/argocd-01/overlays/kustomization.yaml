@@ -3,6 +3,7 @@ kind: Kustomization
 
 bases:
   - ../../default/base
+  - ../../../manifest/argocd/project/argocd-01-config/base
   
 patchesJson6902:
   - target:
