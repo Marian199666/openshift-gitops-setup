@@ -42,5 +42,5 @@
   value: |-
     - name: argocd-vault-plugin
       generate:
-        command: ["argocd-vault-plugin"]
-        args: ["generate", "./"]
+        command: ["sh", "-c"]
+        args: ["kustomize build . | argocd-vault-plugin generate -"]
