@@ -5,8 +5,6 @@ metadata:
   namespace: openshift-gitops  
 spec:
   applicationInstanceLabelKey: argocd.argoproj.io/openshift-gitops
-  dex:
-    openShiftOAuth: true
   rbac:    
     policy: g, argocdadmins, role:admin
     scopes: '[groups]'      
